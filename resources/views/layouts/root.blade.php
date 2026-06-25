@@ -11,7 +11,16 @@
     @yield('head-bottom')
 </head>
 <body>
-@yield('body-top')
+@section('body-top')
+    <x-alert.primary></x-alert.primary>
+    <x-alert.secondary></x-alert.secondary>
+    <x-alert.info></x-alert.info>
+    <x-alert.warning></x-alert.warning>
+    <x-alert.success></x-alert.success>
+    <x-alert.error></x-alert.error>
+    <x-alert.light></x-alert.light>
+    <x-alert.dark></x-alert.dark>
+@show
 @yield('body')
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@latest/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
 @yield('body-bottom')
