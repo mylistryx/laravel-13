@@ -20,5 +20,9 @@ export default defineConfig({
         watch: {
             ignored: ['**/storage/framework/views/**'],
         },
+        /** My CORS fix! */
+        cors: {
+            origin: /^https?:\/\/(?:(?:[^:]+\.)?localhost|laravel\.local|127\.0\.0\.1|\[::1])(?::\d+)?$/,
+        },
     },
 });
