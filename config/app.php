@@ -1,7 +1,11 @@
 <?php
 
 return [
+    'adminName'         => env('APP_ADMIN_NAME', 'Администратор'),
+    'adminEmail'        => env('APP_ADMIN_EMAIL', 'admin@example.com'),
+    'adminPassword'     => env('APP_ADMIN_PASSWORD', 'password'),
 
+    'fakerUserPassword' => env('APP_FAKER_USER_PASSWORD', 'password'),
     /*
     |--------------------------------------------------------------------------
     | Application Name
@@ -65,7 +69,7 @@ return [
     |
     */
 
-    'timezone' => env('APP_TIME_ZONE','UTC'),
+    'timezone' => env('APP_TIME_ZONE', 'UTC'),
 
     /*
     |--------------------------------------------------------------------------

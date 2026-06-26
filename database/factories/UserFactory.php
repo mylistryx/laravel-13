@@ -24,12 +24,20 @@ class UserFactory extends Factory
      */
     public function definition(): array
     {
+        $baseName = fake()->name();
+        $tailing = mb_substr($baseName, -3);
+        if ($tailing === 'вна' || $tailing === 'вич') {
+            [$lastName, $firstName, $patronymic] = explode(' ', $baseName);
+        } else {
+            [$firstName, $patronymic, $lastName] = explode(' ', $baseName);
+        }
+
         return [
-            'name' => fake()->name(),
-            'email' => fake()->unique()->safeEmail(),
+            'name'              => implode(' ', [$lastName, $firstName, $patronymic]),
+            'email'             => fake()->unique()->safeEmail(),
             'email_verified_at' => now(),
-            'password' => static::$password ??= Hash::make('password'),
-            'remember_token' => Str::random(10),
+            'password'          => static::$password ??= Hash::make('password'),
+            'remember_token'    => Str::random(100),
         ];
     }
 
@@ -38,7 +46,7 @@ class UserFactory extends Factory
      */
     public function unverified(): static
     {
-        return $this->state(fn (array $attributes) => [
+        return $this->state(fn(array $attributes) => [
             'email_verified_at' => null,
         ]);
     }
