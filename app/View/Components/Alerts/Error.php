@@ -1,8 +1,8 @@
 <?php
 
-namespace App\View\Components\Alert;
+namespace App\View\Components\Alerts;
 
-class Danger extends Alert
+class Error extends Alert
 {
     /**
      * Create a new component instance.

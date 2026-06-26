@@ -1,6 +1,6 @@
 <?php
 
-namespace App\View\Components\Alert;
+namespace App\View\Components\Alerts;
 
 class Info extends Alert
 {
