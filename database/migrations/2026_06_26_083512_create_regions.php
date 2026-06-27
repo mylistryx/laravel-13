@@ -11,9 +11,11 @@ return new class extends Migration {
     public function up(): void
     {
         Schema::create('regions', function (Blueprint $table) {
-            $table->char('code', 2)->primary();
+            $table->char('code', 2)
+                  ->primary();
             $table->string('name');
-            $table->boolean('is_active')->default(true);
+            $table->boolean('is_active')
+                  ->default(true);
         });
 
         DB::table('regions')->insert([

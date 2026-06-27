@@ -54,9 +54,14 @@ return new class extends Migration {
 
         Schema::create('currency_rates', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('currency_id')->references('id')->on('currencies')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreignId('currency_id')
+                  ->references('id')
+                  ->on('currencies')
+                  ->cascadeOnDelete()
+                  ->cascadeOnUpdate();
             $table->decimal('rate', 14, 4);
-            $table->date('date')->default(DB::raw('(CURRENT_DATE)'));
+            $table->date('date')
+                  ->default(DB::raw('(CURRENT_DATE)'));
         });
 
         Schema::table('currency_rates', function (Blueprint $table) {
