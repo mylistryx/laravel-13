@@ -1,3 +1,3 @@
 @echo off
 
-call php artisan db:seed DbSeeder
+call php artisan db:seed DatabaseSeeder

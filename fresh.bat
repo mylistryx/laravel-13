@@ -1,3 +1,3 @@
 @echo off
 
-call php artisan migrate:fresh
+call php artisan migrate:fresh %*
